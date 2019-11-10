@@ -16,8 +16,8 @@ ax_g = plt.subplot(1,1,1)
 for i in range(len(path_list)):
 	path=path_list[i]
 	case_name=case_name_list[i]
-	omega=np.loadtxt(path+'x_g_1')
-	gv=np.loadtxt(path+'y_g1_1')
+	omega=np.loadtxt(path+'simplifiedOmega')
+	gv=np.loadtxt(path+'dosWeighedGv')
 	omegaTHZ=[x/(2*m.pi) for x in omega]
 	###########
 	# plot part

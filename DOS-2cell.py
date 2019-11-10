@@ -1,16 +1,31 @@
 #########################################
 #this code study the k gv[x] lifetime versue omeg scat_combine_bands_DOSW_addk.py
 #########################################
-import matplotlib
-#matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import math as m
+import sys
+import os
+
+case = sys.argv
+if case[1] == '2cell':
+	pathFile = '2cellThreeTypicalStructure'
+elif case[1] == '421cell':
+	pathFile = '421cellDiffMixInterfaces'
+else:
+	pathFile = '2cellThreeTypicalStructure'
+	print('请输入2cell或者421cell，默认为2cell')
+
+lib_path = os.path.abspath(os.path.join(pathFile))
+sys.path.append(lib_path)
+import config
+configs = config.configs
+
 plt.rc('font',family='Times New Roman')
 plt.rcParams['mathtext.fontset'] = 'stix'
 
-path_list=['macplot/ShortperiodSL/','macplot/Amorphousalloy/','macplot/Layerstructure/']
-case_name_list=['Short period SL','Amorphous alloy','Layer structure']
+path_list=configs['path_list']
+case_name_list=configs['case_name_list']
 
 font={'size':'35', 'weight':'normal'}
 plt.figure(figsize=(8,9))
@@ -20,10 +35,8 @@ plt.subplots_adjust(left=0.3, bottom=0.1, right=0.8, top=0.9)
 for i in range(len(path_list)):
 	path=path_list[i]
 	case_name=case_name_list[i]
-	omega=np.loadtxt(path+'x_g_1')
-	y_g1_1=np.loadtxt(path+'y_g1_1')
-	DOS=np.loadtxt(path+'y_l2_1')
-	y_k1_1=np.loadtxt(path+'y_k1_1')
+	omega=np.loadtxt(path+'simplifiedOmega')
+	DOS=np.loadtxt(path+'dos')
 	omegaTHZ=[x/(2*m.pi) for x in omega]
 	###########
 	# plot part
@@ -36,4 +49,4 @@ for i in range(len(path_list)):
 plt.yticks(size=30)
 plt.xticks(size=0)
 #plt.show()
-plt.savefig('Dos.png',bbox_inches='tight')
+plt.savefig(pathFile+'/Dos.png',bbox_inches='tight')

@@ -19,8 +19,8 @@ for i in range(len(path_list)):
 	path=path_list[i]
 	case_name=case_name_list[i]
 
-	omega=np.loadtxt(path+'x_g_1')
-	k=np.loadtxt(path+'y_k1_1')
+	omega=np.loadtxt(path+'simplifiedOmega')
+	k=np.loadtxt(path+'dosWeighedK')
 
 	omegaTHZ=[x/(2*m.pi) for x in omega]
 	###########
