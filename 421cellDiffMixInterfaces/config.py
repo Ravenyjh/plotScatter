@@ -5,7 +5,15 @@ pure = "421cellDiffMixInterfaces/macplot"
 
 configs = {
     'path_list': [un + str(i + 1) + '/' for i in range(3)] + [mid + str(i + 1) + '/' for i in range(3)] + [
-        high + str(i + 1) + '/' for i in range(3)] + [pure + '/Si/', pure + '/Ge/'],
+        high + str(i + 1) + '/' for i in range(3)],
     'case_name_list': ['Unmixed', 'Unmixed', 'Unmixed', 'Moderately mixed', 'Moderately mixed', 'Moderately mixed',
-                       'Highly mixed', 'Highly mixed', 'Highly mixed', 'Si', 'Ge']
+                       'Highly mixed', 'Highly mixed', 'Highly mixed']
 }
+
+# configs = {
+#     'path_list': [un + str(i + 1) + '/' for i in range(3)] + [mid + str(i + 1) + '/' for i in range(3)] + [
+#         high + str(i + 1) + '/' for i in range(3)] + [pure + '/Si/', pure + '/Ge/'],
+#     'case_name_list': ['Unmixed', 'Unmixed', 'Unmixed', 'Moderately mixed', 'Moderately mixed', 'Moderately mixed',
+#                        'Highly mixed', 'Highly mixed', 'Highly mixed', 'Si', 'Ge']
+# }
+

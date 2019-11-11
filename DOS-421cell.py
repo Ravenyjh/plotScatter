@@ -25,14 +25,8 @@ configs = config.configs
 path_list=configs['path_list']
 case_name_list=configs['case_name_list']
 
-# plt.rc('font',family='Times New Roman')
-# plt.rcParams['mathtext.fontset'] = 'stix'
-# font={'size':'35', 'weight':'normal'}
-# plt.figure(figsize=(8,9))
-
 ax_d = plt.subplot(1,1,1)
-# plt.subplots_adjust(left=0.3, bottom=0.1, right=0.8, top=0.9)
-	
+
 for i in range(len(path_list)):
 	path=path_list[i]
 	case_name=case_name_list[i]

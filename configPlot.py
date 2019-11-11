@@ -5,7 +5,7 @@ params={
     'ytick.labelsize':'32',
     'lines.linewidth':2 ,
     'legend.fancybox': 'false',         #边框是否圆角
-    'legend.fontsize': '20',
+    'legend.fontsize': '30',
     'legend.edgecolor': 'black',       # 边框颜色
     'legend.framealpha': '1.0',       # 边框透明度
     'figure.figsize'   : '15, 8',    # set figure size
