@@ -1,7 +1,7 @@
 # plotScatter
 
 1. 2cell相关   
-	1. 用于将生成的2cell中的min结构，max结构，amorphous结构的    
+	1. 用于将生成的2cell中的min结构，max结构，amorphous结构的      
 	- k-omega
 	- gv-omega
 	- Dos-omega,   
