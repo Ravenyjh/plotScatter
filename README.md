@@ -4,7 +4,7 @@
 	1. 用于将生成的2cell中的min结构，max结构，amorphous结构的      
 		* k-omega
 		* gv-omega
-		* Dos-omega,   
+		* Dos-omega,  
 	的Dos weighted图(Dos-omega除外)。    
 	其中，为了和dispersion图对应,DOS旋转90度。   
 	2. 数据来源： cluster ~/Si_Ge_alloy/conv/2cell/2cell_CFC-1map/scatter_etal/rearrangeed_file/3.0/plotSIMPLE.py
