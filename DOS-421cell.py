@@ -20,7 +20,7 @@ else:
 lib_path = os.path.abspath(os.path.join(pathFile))
 sys.path.append(lib_path)
 import config
-configs = config.configs
+configs = config.configsDos
 
 path_list=configs['path_list']
 case_name_list=configs['case_name_list']
@@ -39,16 +39,18 @@ for i in range(len(path_list)):
 	# ax_d.set_yscale('log')
 	ax_d.set_yticks([])
 	line = '-'
-	if (i + 1) % 3 == 0:
+	linewidth = 2
+	if i % 3 == 0:
 		label = case_name
 	else:
 		label = ''
-	if i//3 == 0:
-		color = 'black'
-	elif i//3 == 1:
+	if i// 3 == 2:
 		color = 'red'
+		linewidth = 3
+	elif i // 3 == 1:
+		color = 'black'
 	else:
-		color = 'blue'
+		color = 'orange'
 
 	if case_name  == 'Si':
 		label = case_name
@@ -58,8 +60,13 @@ for i in range(len(path_list)):
 		label = case_name
 		line = '--'
 		color = 'purple'
+	if case_name  == 'Smooth interface':
+		label = case_name
+		line = '-'
+		color = 'blue'
+		linewidth = 3
 
-	ax_d.plot(omegaTHZ, DOS, line , color=color, ms=2, mew=1, label=label)
+	ax_d.plot(omegaTHZ, DOS, line , color=color, linewidth = linewidth, label=label)
 ax_d.legend(loc=0, frameon=False)
 ax_d.set_ylabel('DOS')
 ax_d.set_xlabel(r'$\omega$' + '(THz)')

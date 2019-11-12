@@ -25,7 +25,7 @@ else:
 lib_path = os.path.abspath(os.path.join(pathFile))
 sys.path.append(lib_path)
 import config
-configs = config.configs
+configs = config.configsGv
 
 path_list=configs['path_list']
 case_name_list=configs['case_name_list']
@@ -44,17 +44,21 @@ for i in range(len(path_list)):
 	###########
 	# plot part
 	###########
-	line = '-'
+	linewidth = 2
 	if (i + 1) % 3 == 0:
 		label = case_name
 	else:
 		label = ''
-	if i//3 == 0:
-		color = 'black'
-	elif i//3 == 1:
+	if i//3 == 2:
 		color = 'red'
+		line = '-'
+		linewidth = 3
+	elif i//3 == 1:
+		color = 'black'
+		line = '-'
 	else:
-		color = 'blue'
+		color = 'orange'
+		line = '-'
 
 	if case_name  == 'Si':
 		label = case_name
@@ -64,7 +68,13 @@ for i in range(len(path_list)):
 		label = case_name
 		line = '--'
 		color = 'purple'
-	ax_g.plot(omegaTHZ,gv,line ,color=color,ms=3,mew=0,label=label)
+	if case_name  == 'Smooth interface':
+		label = case_name
+		line = '-'
+		color = 'blue'
+		linewidth = 3
+
+	ax_g.plot(omegaTHZ,gv,line ,color=color,linewidth=linewidth,label=label)
 	ax_g.legend(loc=0,frameon=False)
 
 ax_g.set_xlabel(r'$\omega$' +'(THz)')
