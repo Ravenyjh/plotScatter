@@ -4,16 +4,27 @@
 
 import matplotlib.pyplot as plt
 import matplotlib.pylab as pylab
-import configPlot
 import numpy as np
 import math as m
+import os
+import sys
+lib_path = os.path.abspath(os.path.join('./config'))
+sys.path.append(lib_path)
+import configPlot
+import config
+
 params = configPlot.params
 pylab.rcParams.update(params)
+configs = config.configs211cell
 
-plt.rc('font',family='Times New Roman')
+path_list=configs['path_list']
+case_name_list=configs['case_name_list']
 
-path_list=['macplot/ShortperiodSL/','macplot/Amorphousalloy/','macplot/Layerstructure/']
-case_name_list=['Short period SL','Amorphous alloy','Layered structure']
+# plt.rc('font',family='Times New Roman')
+
+# path_list=['macplot/ShortperiodSL/','macplot/Amorphousalloy/','macplot/Layerstructure/']
+# case_name_list=['Short period SL','Amorphous alloy','Layered structure']
+
 ax_k = plt.subplot(1,1,1)
 for i in range(len(path_list)):
 	path=path_list[i]
@@ -30,4 +41,4 @@ for i in range(len(path_list)):
 	ax_k.set_xlabel(r'$\omega$' +'(THz)')
 	ax_k.set_ylabel(r'$k$'+'(W/(m-K))')
 	print(case_name,":",sum(k))
-plt.savefig('K.png', bbox_inches='tight')
+plt.savefig('2cellThreeTypicalStructure'+'/K.png', bbox_inches='tight')
