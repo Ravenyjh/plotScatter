@@ -5,9 +5,9 @@ configs211cellGv = {
                   '2cellThreeTypicalStructure/macplot/Amorphousalloy/',
                   '2cellThreeTypicalStructure/macplot/Layerstructure/'],
     'case_name_list': ['Short period SL','Amorphous alloy','Layer structure'],
-    'case_colors': ['black', 'red', 'blue'],
+    'case_colors': ['blue', 'black', 'red'],
     'line': ['-', '-', '-'],
-    'linewidth': [2, 2, 2]
+    'linewidth': [3, 3, 3]
 }
 
 configs211cellDos = {
@@ -15,8 +15,9 @@ configs211cellDos = {
     'path_list': ['2cellThreeTypicalStructure/macplot/ShortperiodSL/',
                   '2cellThreeTypicalStructure/macplot/Amorphousalloy/',
                   '2cellThreeTypicalStructure/macplot/Layerstructure/'],
-    'case_name_list': ['Short period SL', 'Amorphous alloy', 'Layer structure'],
-    'case_colors': ['black', 'red', 'blue'],
+    'case_name_list': ['Short\n period SL', 'Amorphous\n alloy', 'Layer\n structure'],
+    'case_colors': ['blue', 'black', 'red'],
+    'xAxis': [],
     'line': ['-', '-', '-'],
     'linewidth': [2, 2, 2]
 }

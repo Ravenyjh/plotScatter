@@ -49,6 +49,6 @@ for i in range(len(path_list)):
     ax_g.plot(omegaTHZ,gv,line ,color=color,linewidth=linewidth,label=case_name)
     ax_g.legend(loc=0,frameon=False)
 
-ax_g.set_xlabel(r'$\omega$' +'(THz)')
+ax_g.set_xlabel('Frequency' +'(THz)')
 ax_g.set_ylabel('<'+r'$v_g^2$'+'>'+'('+r'$ \mathrm{km}^2/ \mathrm{s}^2$'+')')
 plt.savefig(pathFile + '/gv.png', bbox_inches='tight')

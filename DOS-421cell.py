@@ -51,7 +51,7 @@ for i in range(len(path_list)):
 
 ax_d.legend(loc=0, frameon=False)
 ax_d.set_ylabel('DOS')
-ax_d.set_xlabel(r'$\omega$' + '(THz)')
+ax_d.set_xlabel('Frequency' + '(THz)')
 # ax_d.set_xlim(0, 1200)
 # ax_d.set_ylim(2, 16)
 
