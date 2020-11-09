@@ -15,7 +15,7 @@ import config
 
 params = configPlot.params
 pylab.rcParams.update(params)
-configs = config.configs211cellGv
+configs = config.configs211cellK
 
 pathFile = configs['pathFile']
 path_list=configs['path_list']
@@ -38,9 +38,14 @@ for i in range(len(path_list)):
 	###########
 	# plot part
 	############
-	ax_k.plot(omegaTHZ, k, line, color=color, linewidth=linewidth, label=case_name)
-	# ax_k.plot(omegaTHZ,k,'-',label=case_name)
+	ax_k.set_xlim(0, 15.7)
+	ax_k.set_ylim(0, 10)
+	ax_k.plot(omegaTHZ, k, linestyle=line, color=color, linewidth=linewidth, label=case_name)
+	# ax_k.plot(omegaTHZ, k, line, linewidth=linewidth, label=case_name)
 	ax_k.set_xlabel('Frequency' +'(THz)')
-	ax_k.set_ylabel(r'$k$'+'(W/(m-K))')
+	# ax_k.set_ylabel(r'$\kappa$'+'(W/(m-K))')
+	ax_k.set_ylabel('Thermal conductivity' + ' <'+r'$\kappa$'+'> ' + '(W/(m-K))')
+	ax_k.legend(loc=0)
+	# ax_k.legend(loc="center left", bbox_to_anchor=(0, 0.7))
 	print(case_name,":",sum(k))
 plt.savefig('2cellThreeTypicalStructure'+'/K.png', bbox_inches='tight')
